@@ -41,8 +41,7 @@ Bura command helps to get rid of long commands.
 
 ## What is Bura CLI?
 
-If you are tired of long commands, **Bura** is exactly what you are looking for.
-**Bura** makes a long command short, easy to remember and easy to use
+**Bura CLI** is a command line tool that allows you to create long and different commands that you work with in a concise manner as you like (it can be simple or with input).
 
 ## Demo
 
