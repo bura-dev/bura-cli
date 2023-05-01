@@ -74,7 +74,7 @@ Bura command helps to get rid of long commands.
 
 ## Installation Windows
 
-1. Download **Bura CLI** `V1.0.0` from [Bura-win.rar](https://s3.ir-thr-at1.arvanstorage.com/jepbura/bura-win.rar) `or` [Bura-win.rar](https://github.com/jepbura/bura-cli/releases/download/v1.0.0/bura-win.rar).
+1. Download **Bura CLI** `V1.2.0` from [Bura-win.rar](https://s3.ir-thr-at1.arvanstorage.com/jepbura/bura-win.rar) `or` [Bura-win.rar](https://github.com/jepbura/bura-cli/releases/download/v1.2.0/bura-win.rar).
 
 2. Unrar Bura-win.rar in a folder like `C:\bura`
 
@@ -119,7 +119,7 @@ Bura command helps to get rid of long commands.
 	- If you download from these two links, transfer the Bura-linux.rar to the $HOME/bura.
 	[Bura-win.rar](https://s3.ir-thr-at1.arvanstorage.com/jepbura/bura-linux.rar)
 	`or`
-	[Bura-win.rar](https://github.com/jepbura/bura-cli/releases/download/v1.0.0/bura-linux.rar)
+	[Bura-win.rar](https://github.com/jepbura/bura-cli/releases/download/v1.2.0/bura-linux.rar)
 	
 	```bash
 	mv bura-linux.rar $HOME/bura
