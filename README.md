@@ -114,7 +114,7 @@ Bura command helps to get rid of long commands.
 	cd $HOME/bura
 	```
 
-4. Download **Bura CLI** `V1.0.0`.
+4. Download **Bura CLI** `V1.2.0`.
 
 	- If you download from these two links, transfer the Bura-linux.rar to the $HOME/bura.
 	[Bura-win.rar](https://s3.ir-thr-at1.arvanstorage.com/jepbura/bura-linux.rar)
