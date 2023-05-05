@@ -202,6 +202,11 @@ Bura command helps to get rid of long commands.
 |   --list     |  -l  | View the list of commands and use it |
 |     me       |  me  | View BURA                            |
 
+
+## Coming soon
+
+Add **V2Ray Core** to **Bura CLI**.
+	
 ## Contact us
 
 <hr>
