@@ -205,7 +205,7 @@ Bura command helps to get rid of long commands.
 
 ## Coming soon
 
-Add **V2Ray Core** to **Bura CLI**.
+Add ***V2Ray Core*** to **Bura CLI**.
 	
 ## Contact us
 
