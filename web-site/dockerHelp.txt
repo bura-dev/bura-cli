@@ -1,0 +1,60 @@
+#########################################################################################################
+#gatsby Develop
+#########################################################################################################
+FROM node:alpine
+
+RUN \
+  apk add --no-cache python3 make g++ && \
+  apk add vips-dev fftw-dev --update-cache \
+  --repository http://dl-3.alpinelinux.org/alpine/edge/community \
+  --repository http://dl-3.alpinelinux.org/alpine/edge/main \
+ && rm -fR /var/cache/apk/*
+
+RUN apk add automake autoconf libtool nasm
+
+RUN npm install -g gatsby-cli
+
+WORKDIR /app
+COPY ./package.json .
+RUN yarn install && yarn cache clean
+COPY . .
+
+# Also exposing VSCode debug ports
+EXPOSE 8000 9929 9230 9000
+
+CMD ["gatsby", "develop", "-H", "0.0.0.0" ]
+
+#########################################################################################################
+#gatsby Build
+#########################################################################################################
+# Multi-stage
+# 1) Node image for building frontend assets
+# 2) nginx stage to serve frontend assets
+
+# Name the node stage "builder"
+FROM node:14 AS builder
+# Set working directory
+WORKDIR /app
+# Copy all files from current directory to working dir in image
+COPY . .
+# install node modules and build assets
+RUN yarn install && yarn build
+
+# nginx state for serving content
+FROM nginx:alpine
+# Set working directory to nginx asset directory
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf ./*
+# Copy static assets from builder stage
+COPY --from=builder /app/public .
+# Containers run nginx with global directives and daemon off
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker build -t jepbura/bura-dev-web-ui:2 .
+docker run --rm -it -p 8000:8000 jepbura/bura-dev-web-ui:2
+
+docker-compose up -d
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker run --rm -it -p 8080:80 gatsby-nginx
