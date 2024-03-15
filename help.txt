@@ -1,0 +1,6 @@
+node -v v14.18.2
+npm -v 6.14.15
+
+npm install -g pkg
+pkg ./bin/bura.js
+pkg -t node14-linux,node14-win ./bin/bura.js
